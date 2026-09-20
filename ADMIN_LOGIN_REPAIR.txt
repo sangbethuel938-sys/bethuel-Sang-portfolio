@@ -1,0 +1,20 @@
+ADMIN LOGIN REPAIR
+
+Fixed:
+NameError: verify_admin_password is not defined
+
+Also restored the helper functions that were removed at the same time:
+- Admin notices
+- Password hashing/authentication
+- Password reset helper
+- slugify() used by uploaded files/projects
+
+Direct Supabase REST persistence remains enabled.
+
+DEPLOY
+1. Upload/replace this version in the SAME GitHub repository.
+2. Commit to main.
+3. Wait for Streamlit to redeploy.
+4. Reopen Admin and log in.
+5. Run the Supabase connection test.
+6. If successful, click Sync current portfolio to Supabase.

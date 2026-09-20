@@ -1,0 +1,12 @@
+PROFILE IMAGE SET
+
+Your public profile picture is now configured as:
+
+https://qmqhtpjdhaidjeqkehqq.supabase.co/storage/v1/object/public/portfolio-assets/Profiel.jpg
+
+The homepage will use this Supabase public image URL automatically.
+
+You can still change it later from:
+Admin -> Profile -> Profile image URL (optional)
+
+or upload a new image through the normal uploader.

@@ -1,0 +1,28 @@
+YOUR APP IS ALREADY DEPLOYED - DO NOT CREATE A NEW STREAMLIT APP.
+
+This update restores the full CV information and adds a Full Career CV mode.
+
+Update these files in the SAME GitHub repository connected to Streamlit:
+1. app.py
+2. cv_generator.py
+3. data/experience.json
+4. data/profile.json
+5. assets/Bethuel_Sang_Full_Professional_CV.docx
+6. assets/Bethuel_Sang_Full_Professional_CV.pdf
+
+Then commit the changes to the main branch.
+
+Streamlit Community Cloud will rebuild the existing deployed app from the updated repository.
+
+CV BUILDER CHANGE:
+Admin > CV Builder now has:
+- Full career CV (keeps all saved information) [default]
+- Tailored application CV
+
+Full career mode keeps every saved responsibility.
+Tailored application mode can still prioritize the most relevant information for a particular vacancy.
+
+IMPORTANT:
+Do not create a new Streamlit deployment.
+Do not delete your current app URL.
+Update the same GitHub repository used by your existing Streamlit app.

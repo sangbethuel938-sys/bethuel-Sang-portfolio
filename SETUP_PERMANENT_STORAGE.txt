@@ -1,0 +1,30 @@
+STOP LOSING PORTFOLIO UPDATES
+
+Your Streamlit Community Cloud app uses temporary runtime storage.
+This version stores Admin data permanently in Supabase.
+
+1. Create a free Supabase project at supabase.com.
+2. Open SQL Editor in Supabase.
+3. Open SUPABASE_SETUP.sql from this package.
+4. Copy all of it into SQL Editor and click Run.
+5. In Supabase Project Settings -> API, copy:
+   - Project URL
+   - service_role key
+6. Update the SAME GitHub repository used by your current Streamlit app with this package.
+7. In Streamlit Community Cloud -> your app -> Settings -> Secrets, add:
+
+ADMIN_PASSWORD = "your-current-admin-password"
+SUPABASE_URL = "https://YOUR-PROJECT.supabase.co"
+SUPABASE_SERVICE_KEY = "YOUR-SERVICE-ROLE-KEY"
+SUPABASE_BUCKET = "portfolio-assets"
+
+8. Save Secrets and reboot the app.
+9. Open Admin. You should see:
+   Permanent storage is active. Admin changes are being saved to Supabase.
+
+After this, saved Profile, Site Content, Experience, Education, Skills,
+Certifications, Projects, password changes, profile pictures, project images
+and uploaded CV files will persist through Streamlit restarts/redeploys.
+
+IMPORTANT:
+Never commit the real SUPABASE_SERVICE_KEY to GitHub.

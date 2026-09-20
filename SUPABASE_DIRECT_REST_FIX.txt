@@ -1,0 +1,37 @@
+SUPABASE DIRECT REST FIX
+
+This version bypasses the Supabase Python client completely.
+
+STREAMLIT SECRETS
+SUPABASE_URL = "https://qmqhtpjdhaidjeqkehqq.supabase.co"
+SUPABASE_SECRET_KEY = "sb_secret_YOUR_NEW_PRIVATE_KEY"
+SUPABASE_BUCKET = "portfolio-assets"
+
+Do NOT add database host, port 5432, postgres user/password, or sb_publishable key.
+
+STEPS
+1. Upload this version to the SAME GitHub repository.
+2. Commit to main and wait for Streamlit to rebuild.
+3. Reboot the Streamlit app.
+4. Open Admin -> Supabase permanent-storage tools.
+5. Click "Run Supabase connection test".
+
+Success message:
+Direct REST connection to portfolio_store succeeded.
+
+Then click:
+Sync current portfolio to Supabase
+
+Finally confirm in:
+Supabase -> Table Editor -> portfolio_store
+
+Expected rows:
+profile
+projects
+experience
+skills
+education
+certifications
+site_content
+
+If it fails, Admin now shows the exact HTTP status and Supabase error.

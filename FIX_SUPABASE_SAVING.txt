@@ -1,0 +1,73 @@
+FIXING PORTFOLIO DATA NOT SAVING TO SUPABASE
+
+This version no longer treats "client created" as proof that Supabase works.
+Admin now performs a real database read test.
+
+STEP 1 - RUN UPDATED SQL
+Supabase -> SQL Editor -> New query
+Open SUPABASE_SETUP.sql from this package.
+Copy all -> Run.
+
+STEP 2 - CHECK STREAMLIT SECRETS
+Use:
+
+ADMIN_PASSWORD = "your-password"
+SUPABASE_URL = "https://qmqhtpjdhaidjeqkehqq.supabase.co"
+SUPABASE_SECRET_KEY = "sb_secret_YOUR_PRIVATE_SECRET_KEY"
+SUPABASE_BUCKET = "portfolio-assets"
+
+The app also supports the older name SUPABASE_SERVICE_KEY, but
+SUPABASE_SECRET_KEY is clearer.
+
+DO NOT use:
+- database password
+- postgres connection string
+- publishable key
+- sb_publishable_... key
+
+STEP 3 - REBOOT STREAMLIT
+After changing Secrets, reboot the app.
+
+STEP 4 - OPEN ADMIN
+You must see:
+Permanent storage is ACTIVE. Supabase database write/read access is working.
+
+If you see a red message instead, it now displays the actual database error.
+
+STEP 5 - SYNC YOUR EXISTING DATA
+Admin -> Supabase permanent-storage tools
+Click:
+Sync current portfolio to Supabase
+
+This copies the currently visible:
+- Profile
+- Projects
+- Experience
+- Skills
+- Education
+- Certifications
+- Site Content
+
+to the portfolio_store table.
+
+STEP 6 - CONFIRM IN SUPABASE
+Supabase -> Table Editor -> portfolio_store
+
+You should see rows with keys such as:
+profile
+projects
+experience
+skills
+education
+certifications
+site_content
+
+STEP 7 - TEST PERSISTENCE
+Change one Profile/About field in Admin and Save.
+In Supabase Table Editor, open the profile row and confirm updated_at changes.
+Then reboot Streamlit. The change should still be visible.
+
+IMPORTANT:
+If Table Editor remains empty after the green ACTIVE status and Sync button,
+read the exact red error shown in Admin. This version will no longer silently
+hide failed database writes.

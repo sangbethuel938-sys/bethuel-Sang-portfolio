@@ -1,0 +1,12 @@
+services:
+  portfolio:
+    build: .
+    container_name: bethuel-portfolio
+    ports:
+      - "8501:8501"
+    environment:
+      PORTFOLIO_STORAGE: /app/storage
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD}
+    volumes:
+      - ./storage:/app/storage
+    restart: unless-stopped
